@@ -1,27 +1,27 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bebas_Neue, Poppins } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bebasNeue = Bebas_Neue({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
   title: "Mamedes Beats",
-  description: "Marketplace de Beats",
+  description: "Beats exclusivos e licenciados",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable}`}
-      >
+      <body className={`${bebasNeue.variable} ${poppins.variable} antialiased`}>
         {children}
       </body>
     </html>

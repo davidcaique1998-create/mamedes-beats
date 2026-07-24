@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap');
 /* RESET */
 
 * {
@@ -13,7 +14,7 @@ html {
 body {
   background: #050505;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins'Arial, Helvetica, sans-serif;
 }
 
 /* CONTAINER */
@@ -199,7 +200,12 @@ nav a:hover {
     flex-direction: column;
   }
 
-  .loginButton {
-    display: none;
+  .loginButton {display: none;
   }
 }
+
+h1, h2, h3, .logo {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
