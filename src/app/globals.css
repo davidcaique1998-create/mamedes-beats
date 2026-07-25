@@ -110,13 +110,34 @@ nav a:hover {
 /* HERO */
 
 .hero {
+  position: relative;
   min-height: 100vh;
   padding: 120px 8%;
   display: flex;
   align-items: center;
-background:
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
     linear-gradient(135deg, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.7) 100%),
     url('/hero-bg.jpg') center center / cover no-repeat;
+  animation: kenBurns 08s ease-in-out infinite alternate;
+  z-index: 0;
+}
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.15) translate(-2%, -2%);
+  }
 }
 
 .heroContent {
