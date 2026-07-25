@@ -185,29 +185,111 @@ background:
 
 /* RESPONSIVO */
 
-@media (max-width: 900px) {
-  nav {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 48px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-
-  .buttons {
-    flex-direction: column;
-  }
-
-  .loginButton {display: none;
-  }
+/* BEATS SECTION */
+.beatsSection {
+  padding: 100px 0;
+  background: #0a0a0a;
 }
-
-h1, h2, h3, .logo {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 0.02em;
+.beatsSectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
 }
-
+.beatsSectionHeader h2 {
+  font-size: 42px;
+  margin-top: 10px;
+}
+.beatsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.beatCard {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.beatCard:hover {
+  transform: translateY(-6px);
+  border-color: #0d47ff;
+}
+.beatCover {
+  position: relative;
+  height: 220px;
+}
+.beatCoverGradient {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0d47ff 0%, #050505 100%);
+  color: rgba(255, 255, 255, 0.3);
+}
+.playButton {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  color: #050505;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.playButton:hover {
+  background: #0d47ff;
+  color: white;
+  transform: scale(1.08);
+}
+.beatInfo {
+  padding: 24px;
+}
+.beatGenre {
+  color: #0d47ff;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.beatTitle {
+  font-size: 22px;
+  margin: 10px 0 14px;
+}
+.beatMeta {
+  display: flex;
+  gap: 20px;
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.beatFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.beatPrice {
+  font-size: 20px;
+  font-weight: bold;
+}
+.beatBuyButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0d47ff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.beatBuyButton:hover {
+  background: #0038d4;
+}
