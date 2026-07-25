@@ -1,8 +1,8 @@
 "use client";
 import { useRef, useState } from "react";
-import { Play, Pause, ShoppingCart, Music2 } from "lucide-react";
+import { Play, Pause, ShoppingCart } from "lucide-react";
 
-export default function BeatCard({ title, genre, bpm, note, price, audioSrc }) {
+export default function BeatCard({ title, genre, bpm, note, price, audioSrc, cover }) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -22,10 +22,10 @@ export default function BeatCard({ title, genre, bpm, note, price, audioSrc }) {
 
   return (
     <div className="beatCard">
-      <div className="beatCover">
-        <div className="beatCoverGradient">
-          <Music2 size={48} />
-        </div>
+      <div
+        className="beatCover"
+        style={{ backgroundImage: `url(${cover})` }}
+      >
         <button className="playButton" onClick={togglePlay}>
           {isPlaying ? <Pause size={22} /> : <Play size={22} />}
         </button>

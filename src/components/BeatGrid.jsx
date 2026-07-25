@@ -7,10 +7,10 @@ const beats = [
     bpm: 130,
     note: "Gm",
     price: "100,00",
-    audioSrc: "/beats/lambo-preta.wav",
+    audioSrc: "/beats/lambo-preta.wav",cover: "/beats/lambo-preta-cover.png",
   },
   {
-    title: "Praise The Lord",
+    title: "Praise The Lord",cover: "/beats/praise-the-lord-cover.png",
     genre: "TRAP",
     bpm: 160,
     note: "Bm",
@@ -23,7 +23,7 @@ const beats = [
     bpm: 130,
     note: "Am",
     price: "100,00",
-    audioSrc: "/beats/longe-de-magnata.wav",
+    audioSrc: "/beats/longe-de-magnata.wav",cover: "/beats/longe-de-magnata-cover.png",
   },
 ];
 
