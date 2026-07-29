@@ -20,6 +20,10 @@ export default function BeatCard({ title, genre, bpm, note, price, audioSrc, cov
 
   const handleEnded = () => setIsPlaying(false);
 
+  const whatsappNumber = "5511983939696";
+  const message = `Olá! Tenho interesse no beat "${title}" (${genre} - R$ ${price})`;
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
   return (
     <div className="beatCard">
       <div
@@ -41,10 +45,15 @@ export default function BeatCard({ title, genre, bpm, note, price, audioSrc, cov
         </div>
         <div className="beatFooter">
           <span className="beatPrice">R$ {price}</span>
-          <button className="beatBuyButton">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="beatBuyButton"
+          >
             <ShoppingCart size={18} />
             Comprar
-          </button>
+          </a>
         </div>
       </div>
     </div>
