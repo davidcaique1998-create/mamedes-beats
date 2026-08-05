@@ -447,4 +447,77 @@ position: relative;
 .licenseButton:hover {
   background: #0038d4;
   transform: translateY(-2px);
+}/* LICENSES PAGE */
+.licensesPageHero {
+  padding: 160px 0 60px;
+  text-align: center;
+  background: #050505;
+}
+.licensesPageHero h1 {
+  font-size: 56px;
+  margin: 10px 0 20px;
+}
+.licensesPageHero p {
+  color: #cfcfcf;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.termsSection {
+  padding: 100px 0;
+  background: #050505;
+}
+.termsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.termsCard {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 30px;
+}
+.termsCard h3 {
+  color: #0d47ff;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.termsCard ul {
+  list-style: none;
+}
+.termsCard li {
+  color: #cfcfcf;
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 14px;
+}
+.termsCard li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #0d47ff;
+}
+.faqSection {
+  padding: 100px 0;
+  background: #0a0a0a;
+}
+.faqList {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faqItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 25px 0;
+}
+.faqItem h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+.faqItem p {
+  color: #cfcfcf;
+  font-size: 16px;
+  line-height: 1.6;
 }
