@@ -56,19 +56,24 @@ export default function LicensesPage() {
   return (
     <>
       <Navbar />
-      <section className="licensesPageHero">
-        <div className="container">
-          <span className="subtitle">LICENÇAS DE USO</span>
-          <h1>ENTENDA CADA PLANO</h1>
-          <p>
-            Conheça em detalhes o que cada licença permite antes de escolher
-            o plano ideal para o seu projeto.
-          </p>
-        </div>
-      </section>
+      <section className="licensesHero">
+  <div className="licensesHeroOverlay"></div>
+  <div className="container licensesHeroContent">
+    <span className="subtitle">LICENÇAS DE USO</span>
+    <h1>ENCONTRE O PLANO<br /><span>IDEAL PRA VOCÊ</span></h1>
+    <p>
+      Conheça em detalhes o que cada licença permite antes de escolher
+      o plano certo para o seu projeto.
+    </p>
+    <a href="#planos" className="licensesHeroButton">
+      Ver Planos
+    </a>
+  </div>
+</section>
 
-      <Licenses />
-
+<div id="planos">
+  <Licenses />
+</div>
       <section className="termsSection">
         <div className="container">
           <div className="beatsSectionHeader">
