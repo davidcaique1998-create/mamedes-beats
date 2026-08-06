@@ -447,77 +447,141 @@ position: relative;
 .licenseButton:hover {
   background: #0038d4;
   transform: translateY(-2px);
-}/* LICENSES PAGE */
-.licensesPageHero {
+}
+.contactPageHero {
   padding: 160px 0 60px;
   text-align: center;
   background: #050505;
 }
-.licensesPageHero h1 {
-  font-size: 56px;
-  margin: 10px 0 20px;
+/* CONTACT PAGE */
+.contactHero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 160px 8% 100px;
 }
-.licensesPageHero p {
-  color: #cfcfcf;
-  font-size: 18px;
-  max-width: 600px;
+.contactHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(13,71,255,0.25) 0%, transparent 60%),
+    linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+  z-index: 0;
+}
+.contactHeroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
   margin: 0 auto;
 }
-.termsSection {
-  padding: 100px 0;
+.contactHero h1 {
+  font-size: 64px;
+  line-height: 1.05;
+  margin: 15px 0 25px;
+}
+.contactHero h1 span {
+  color: #0d47ff;
+}
+.contactHero p {
+  color: #cfcfcf;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+.contactHeroButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #0d47ff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 18px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(13,71,255,0.4);
+  transition: 0.3s;
+}
+.contactHeroButton:hover {
+  background: #0038d4;
+  transform: translateY(-3px);
+  box-shadow: 0 0 55px rgba(13,71,255,0.6);
+}
+
+.contactCardsSection {
+  padding: 40px 0 140px;
   background: #050505;
 }
-.termsGrid {
+.contactGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
-.termsCard {
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 30px;
-}
-.termsCard h3 {
-  color: #0d47ff;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-.termsCard ul {
-  list-style: none;
-}
-.termsCard li {
-  color: #cfcfcf;
-  font-size: 15px;
-  line-height: 1.6;
-  padding-left: 20px;
+.contactCard {
   position: relative;
-  margin-bottom: 14px;
+  display: block;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 40px 32px;
+  text-decoration: none;
+  transition: 0.35s;
+  overflow: hidden;
 }
-.termsCard li::before {
-  content: "—";
+.contactCard::before {
+  content: "";
   position: absolute;
-  left: 0;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13,71,255,0.15), transparent 60%);
+  opacity: 0;
+  transition: 0.35s;
+}
+.contactCard:hover {
+  transform: translateY(-8px);
+  border-color: #0d47ff;
+  box-shadow: 0 15px 40px rgba(13,71,255,0.25);
+}
+.contactCard:hover::before {
+  opacity: 1;
+}
+.contactCardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(13,71,255,0.15);
   color: #0d47ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
 }
-.faqSection {
-  padding: 100px 0;
-  background: #0a0a0a;
+.contactCard h3 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
 }
-.faqList {
-  max-width: 800px;
-  margin: 0 auto;
+.contactCard p {
+  color: #999;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
 }
-.faqItem {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 25px 0;
-}
-.faqItem h3 {
-  font-size: 19px;
-  margin-bottom: 10px;
-}
-.faqItem p {
-  color: #cfcfcf;
-  font-size: 16px;
-  line-height: 1.6;
+.contactValue {
+  display: block;
+  color: #0d47ff;
+  font-weight: bold;
+  font-size: 17px;
+  position: relative;
+  z-index: 1;
 }
