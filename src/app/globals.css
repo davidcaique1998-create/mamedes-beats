@@ -120,6 +120,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   overflow: hidden;
+  margin-top: -35vh;
 }
 .hero::before {
   content: "";
@@ -733,4 +734,23 @@ position: relative;
   color: #cfcfcf;
   font-size: 16px;
   line-height: 1.6;
+}/* OPENING LOGO ANIMATION */
+.openingWrapper {
+  position: relative;
+  height: 220vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.openingText {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  white-space: nowrap;
+  font-size: clamp(40px, 13vw, 200px);
+  font-weight: 900;
+  z-index: 1000;
+  pointer-events: none;
 }
