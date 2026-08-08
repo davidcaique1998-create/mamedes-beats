@@ -228,6 +228,16 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+}.beatsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+.beatStackItem {
+  position: sticky;
+  padding-bottom: 40px;
 }
 .beatCard {
   background: #111;
@@ -243,20 +253,41 @@ nav a:hover {
 .beatCover {
   position: relative;
   height: 220px;
-  background-color: #111;
+  background-color: #4169e1;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-.playButton {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  width: 48px;
-  height: 48px;
+.beatPlayer {
+  background: #0a0a0a;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.beatPlayerControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+.skipButton {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+.skipButton:hover {
+  color: #0d47ff;
+}
+.playButtonSmall {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: white;
-  color: #050505;
+  background: #0d47ff;
+  color: white;
   border: none;
   display: flex;
   align-items: center;
@@ -264,10 +295,27 @@ nav a:hover {
   cursor: pointer;
   transition: 0.3s;
 }
-.playButton:hover {
-  background: #0d47ff;
-  color: white;
+.playButtonSmall:hover {
+  background: #0038d4;
   transform: scale(1.08);
+}
+.beatPlayerTimeline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.beatTime {
+  color: #999;
+  font-size: 12px;
+  min-width: 32px;
+}
+.seekBar {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  accent-color: #0d47ff;
+  cursor: pointer;
 }
 .beatInfo {
   padding: 24px;
@@ -738,7 +786,6 @@ position: relative;
 .openingWrapper {
   position: relative;
   height: 220vh;
-  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -752,5 +799,94 @@ position: relative;
   font-size: clamp(40px, 13vw, 200px);
   font-weight: 900;
   z-index: 1000;
+  pointer-events: none;
+}.beatCardHorizontal {
+  display: flex;
+  flex-direction: row;
+}
+.beatLeft {
+  width: 45%;
+  flex-shrink: 0;
+}
+.beatRight {
+  flex: 1;
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+.beatRight .beatTitle {
+  margin: 6px 0 12px;
+}
+.beatRight .beatPrice {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 16px 0 20px;
+}
+.beatRight .beatBuyButton {
+  width: fit-content;
+}
+
+@media (max-width: 700px) {
+  .beatCardHorizontal {
+    flex-direction: column;
+  }
+  .beatLeft {
+    width: 100%;
+  }
+  .beatRight {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}/* NEON EDGE GLOW */
+.neonEdgeLeft,
+.neonEdgeRight {
+  position: fixed;
+  top: 0;
+  width: 4px;
+  height: 100vh;
+  background: #0d47ff;
+  z-index: 1500;
+  pointer-events: none;
+  animation: neonPulse 4s ease-in-out infinite;
+}
+.neonEdgeLeft {
+  left: 0;
+  box-shadow: 0 0 20px 4px rgba(13,71,255,0.8), 0 0 40px 10px rgba(13,71,255,0.4);
+}
+.neonEdgeRight {
+  right: 0;
+  box-shadow: 0 0 20px 4px rgba(13,71,255,0.8), 0 0 40px 10px rgba(13,71,255,0.4);
+}
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}/* BACKGROUND VIDEO */
+.bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+  filter: grayscale(1) brightness(1.2) contrast(1.1);
+}
+.bgVideoOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0d47ff;
+  mix-blend-mode: color;
+  z-index: 0;
   pointer-events: none;
 }
